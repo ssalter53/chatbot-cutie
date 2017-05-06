@@ -21,3 +21,9 @@ For this project, you will be implementing a chatbot!
 2. After taking in the user input, check the string if it satisfies a certain condition for a predetermined response
 3. If it satisfies a predetermined response, give a response back to the user
 4. If not, write back another message that says the bot could not understand the user input
+
+## Resources
+- Bot UI: https://codepen.io/chriscoyier/pen/zqPBRG
+- Lorem Ipsum Chat Bot: https://codepen.io/sdlambert/full/avWaPZ
+- Chatbot Tutorial: https://codepen.io/lilgreenland/pres/pyVvqB
+- Gif Chat Bot: https://codepen.io/MyXoToD/pen/foKse
