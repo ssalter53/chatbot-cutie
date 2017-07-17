@@ -3,42 +3,42 @@ nlp = window.nlp_compromise;
 var messages = [], //array that hold the record of each string in chat
   lastUserMessage = "", //keeps track of the most recent input string from the user
   botMessage = "", //var keeps track of what the chatbot is going to say
-  botName = 'Chatbot', //name of the chatbot
+  botName = 'Chattersaurus', //name of the chatbot
   talking = true; //when false the speach function doesn't work
-//
-//
-//****************************************************************
-//****************************************************************
-//****************************************************************
-//****************************************************************
-//****************************************************************
-//****************************************************************
-//****************************************************************
-//edit this function to change what the chatbot says
+
 function chatbotResponse() {
   talking = true;
-  botMessage = "I'm confused"; //the default message
+  botMessage = "I'm confused, please say 'hi'."; //the default message
 
   if (lastUserMessage === 'hi') {
-    botMessage = 'Howdy!';
+    botMessage = "Hey, I'm "+botName+". How are you feeling today?";
+    console.log("first if");
+  }else if (lastUserMessage === 'hello') {
+    botMessage = "Hey, I'm "+botName+". How are you feeling today?";
+  }else if(lastUserMessage === 'good') {
+    botMessage = "That's great to hear! " + botName + " isn't doing so well.";
+    console.log("second if");
+    }else if(lastUserMessage === 'great') {
+    botMessage = "That's great to hear! " + botName + " isn't doing so well.";}else if(lastUserMessage === 'fine') {
+    botMessage = "That's great to hear! " + botName + " isn't doing so well.";}
+    else if (lastUserMessage === "why"){
+        botMessage = "Yesterday I got in a fight with Indominous Rex.";
+        console.log("third if");
   }
-
-  if (lastUserMessage === 'name') {
-    botMessage = 'My name is ' + botName;
-  }
+    else if (lastUserMessage === "why?"){
+        botMessage = "Yesterday I got in a fight with Indominous Rex.";
+        }
+    else if (lastUserMessage === "why not"){
+        botMessage = "Yesterday I got in a fight with Indominous Rex.";}
+    else if (lastUserMessage === "why not?"){
+        botMessage = "Yesterday I got in a fight with Indominous Rex.";} 
+  else if(lastUserMessage === "what happened"){
+    botMessage = "I got dino sore. . . ";
+  }else if(lastUserMessage === "what happened?"){
+    botMessage = "I got dino sore. . . ";}
+  
 }
-//****************************************************************
-//****************************************************************
-//****************************************************************
-//****************************************************************
-//****************************************************************
-//****************************************************************
-//****************************************************************
-//
-//
-//
-//this runs each time enter is pressed.
-//It controls the overall input and output
+
 function newEntry() {
   //if the message from the user isn't empty then run 
   if (document.getElementById("chatbox").value != "") {
@@ -57,8 +57,9 @@ function newEntry() {
     Speech(botMessage);
     //outputs the last few array elements of messages to html
     for (var i = 1; i < 8; i++) {
-      if (messages[messages.length - i])
+      if (messages[messages.length - i]){
         document.getElementById("chatlog" + i).innerHTML = messages[messages.length - i];
+      }
     }
   }
 }
